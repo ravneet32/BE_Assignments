@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task Details</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        .task-details { border: 1px solid #ddd; padding: 20px; border-radius: 5px; }
+        .back-button { background: #666; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <a href="/tasks" class="back-button">Back to Tasks</a>
+    
+    <div class="task-details">
+        <h1><%= task.title %></h1>
+        <p><%= task.description %></p>
+        <p><small>Created: <%= new Date(task.createdAt).toLocaleString() %></small></p>
+        <p><small>Task ID: <%= task.id %></small></p>
+    </div>
+</body>
+</html>

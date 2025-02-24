@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Todo List</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        .task { border: 1px solid #ddd; padding: 10px; margin: 10px 0; border-radius: 5px; }
+        .add-button { background: #4CAF50; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Todo List</h1>
+    <a href="/add-task" class="add-button">Add New Task</a>
+    
+    <div class="tasks">
+        <% tasks.forEach(task => { %>
+            <div class="task">
+                <h3><%= task.title %></h3>
+                <p><%= task.description %></p>
+                <small>Created: <%= new Date(task.createdAt).toLocaleString() %></small>
+                <div>
+                    <a href="/task?id=<%= task.id %>">View Details</a>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</body>
+</html>
